@@ -1,0 +1,19 @@
+{
+    "name": "rafael.malanco/proyecto-db-php",
+    "description": "Curso de PHP: Bases de datos",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "ExpenseTracker\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rafael Malanco"
+        }
+    ],
+    "require": {
+        "symfony/var-dumper": "^7.1",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

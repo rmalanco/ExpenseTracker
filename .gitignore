@@ -1,0 +1,8 @@
+# Ignorar .vscode
+.vscode
+
+# Ignorar vendor
+vendor
+
+# Ignorar el archivo .env
+.env
