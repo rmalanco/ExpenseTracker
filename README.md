@@ -24,7 +24,7 @@ Sigue estos pasos para instalar y configurar la aplicación en tu entorno local:
 1. Clona el repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/expense-tracker.git
+   git clone https://github.com/rmalanco/ExpenseTracker.git
    ```
 
 2. Navega al directorio del proyecto:
