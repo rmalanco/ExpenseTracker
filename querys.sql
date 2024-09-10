@@ -42,3 +42,51 @@ VALUES ('Admin', 'Administrador'),
     ('User', 'Usuario');
 
 SELECT * FROM Roles;
+
+-- categories table
+
+CREATE TABLE Categories (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(50) NOT NULL,
+    Description VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Expenses (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT NOT NULL,
+    CategoryID INT NOT NULL,
+    Amount DECIMAL(10, 2) NOT NULL,
+    Description TEXT,
+    Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES Users (ID),
+    FOREIGN KEY (CategoryID) REFERENCES Categories (ID)
+);
+
+CREATE TABLE Income (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT NOT NULL,
+    Amount DECIMAL(10, 2) NOT NULL,
+    Source TEXT,
+    Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES Users (ID)
+);
+
+CREATE TABLE Budgets (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT NOT NULL,
+    CategoryID INT NOT NULL,
+    Amount DECIMAL(10, 2) NOT NULL,
+    StartDate DATE NOT NULL,
+    EndDate DATE NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES Users (ID),
+    FOREIGN KEY (CategoryID) REFERENCES Categories (ID)
+);
+
+CREATE TABLE PaymentMethods (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT NOT NULL,
+    Name TEXT NOT NULL,
+    Details TEXT,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES Users (ID)
+);
